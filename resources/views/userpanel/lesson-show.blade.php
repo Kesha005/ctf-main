@@ -23,17 +23,7 @@
             <div class=" collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-5">
-                        @guest
-                        @if (Route::has('login'))
-                        <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
 
-                        @endif
-
-                        @if (Route::has('register'))
-                        <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @endif
-
-                        @else
                     <li><a class="nav-link text-light" href="{{route('user.profile')}}">Profil</a></li>
                     <li><a class="nav-link text-light" href="{{route('raiting')}}">Reýting</a></li>
                     <li><a class="nav-link text-light" href="{{ route('users') }}">Yza</a></li>
@@ -45,7 +35,7 @@
                         @csrf
                     </form>
                     </li>
-                    @endguest
+
                 </ul>
             </div>
         </div>
@@ -76,7 +66,7 @@
                 <small class="fas">minut</small>
                 <h4 class="fas" id="seconds">00</h4>
                 <small class="fas">sekunt</small><br>
-                <a href="{{ route('game_over_user') }}" id="h" name="h" hidden></a>
+                <a href="{{ route('game_over_admin') }}" id="h" name="h" hidden></a>
             </div>
             @include('layouts.user_script')
         </div>

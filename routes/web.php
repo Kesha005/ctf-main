@@ -56,6 +56,11 @@ Route::get('/raiting', [HomeController::class, 'raiting'])->name('raiting');
 
 Route::get('AjaxTest', [AjaxController::class, 'index'])->name('ajax');
 
+Route::get('/admin/end_game', [timecontroller::class, 'end_game'])->name('end_game');
+
+Route::get('admin/new_game', [timecontroller::class, 'new_game'])->name('new_game');
+
+Route::get('/game_over_a', [timecontroller::class, 'game_over_admin'])->name('game_over_admin');
 
 #___________________________________User panel END____________________________________________________________________
 
@@ -127,13 +132,7 @@ Route::delete('/admin/quiz_categ_delete/{id}',[quizcontroller::class,'destroy_ca
 
 Route::post('/admin/time_post', [timecontroller::class, 'post_time'])->name('time_post')->middleware('admin');
 
-Route::get('/admin/end_game',[timecontroller::class,'end_game'])->name('end_game');
 
-Route::get('admin/new_game',[timecontroller::class,'new_game'])->name('new_game');
-
-Route::get('/game_over',[timecontroller::class,'game_over_user'])->name('game_over_user');
-
-Route::get('/game_over_a', [timecontroller::class, 'game_over_admin'])->name('game_over_admin');
 
 
 #_______________________________Question Crud routes_____________________________________

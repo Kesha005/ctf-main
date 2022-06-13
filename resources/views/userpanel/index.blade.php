@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="60">
 
     <title>Soraglar</title>
 
@@ -29,20 +28,8 @@
             <div class=" collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-5">
-                        @guest
-                        @if (Route::has('login'))
-                        <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
 
-                        @endif
-
-                        @if (Route::has('register'))
-                        <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @endif
-
-
-
-
-                        @if($user->status=='admin')
+                    @if($user->status=='admin')
                     <li><a class="  nav-link text-light " href="{{route('teams')}}">Admin Panel</a></li>
                     @endif
                     <li><a class=" nav-link text-light" href="{{route('user.profile')}}">Profil</a></li>
@@ -55,7 +42,7 @@
                         @csrf
                     </form>
                     </li>
-                    @endguest
+
                 </ul>
             </div>
         </div>
@@ -74,6 +61,7 @@
                     <small class="fas">minut</small>
                     <h4 class="fas" id="seconds">00</h4>
                     <small class="fas">sekunt</small><br>
+                    <a href="{{ route('game_over_admin') }}" id="h" name="h" hidden></a>
                 </div>
                 @include('layouts.user_script')
             </div>

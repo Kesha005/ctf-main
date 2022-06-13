@@ -173,7 +173,7 @@
                         </div>
                     </div>
                 </section><b
-                @elseif($date->status=='on_progress')
+            @elseif($date->status=='on_progress')
                 <br>
                 <div id="year" class="year"></div>
                 <div id="countdown" class="countdown">

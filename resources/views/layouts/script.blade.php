@@ -33,21 +33,21 @@
          hours.innerHTML = h < 10 ? '0' + h : h;
          minutes.innerHTML = m < 10 ? '0' + m : m;
          seconds.innerHTML = s < 10 ? '0' + s : s;
-        
+         if (diff <= 0) 
+         {
+             document.getElementById('h').click();
+         }
 
-        if(diff<=0)
-        {
-            clearInterval(timer);       
-            document.getElementById('h').click();
-        }
      }
 
      // Show spinner before countdown
-        setTimeout(() => {
+     setTimeout(() => {
          loading.remove();
          countdown.style.display = 'flex';
      }, 1000);
 
      // Run every second
-    timer=setInterval(updateCountdown, 1000);
+    
+        setInterval(updateCountdown, 1000);
+     
  </script>

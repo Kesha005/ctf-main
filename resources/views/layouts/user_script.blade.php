@@ -1,4 +1,4 @@
- <a href="{{ route('game_over_user') }}" id="h" name="h" hidden></a>
+ <a href="{{ route('game_over_admin') }}" id="h" name="h" hidden></a>
  <script type="text/javascript">
      const days = document.getElementById('days');
      const hours = document.getElementById('hours');
@@ -24,7 +24,9 @@
      function updateCountdown() {
          const currentTime = new Date();
          const diff = newYearTime - currentTime;
-
+         if (diff <= 0) {
+             document.getElementById('h').click();
+         }
          const d = Math.floor(diff / 1000 / 60 / 60 / 24);
          const h = Math.floor(diff / 1000 / 60 / 60) % 24;
          const m = Math.floor(diff / 1000 / 60) % 60;
@@ -37,10 +39,10 @@
          seconds.innerHTML = s < 10 ? '0' + s : s;
 
 
-         if (diff <= 0) {
-             clearInterval(timer);
-             document.getElementById('h').click();
-         }
+
+
+
+
      }
 
      // Show spinner before countdown
@@ -50,5 +52,5 @@
      }, 1000);
 
      // Run every second
-     timer = setInterval(updateCountdown, 1000);
+     setInterval(updateCountdown, 1000);
  </script>

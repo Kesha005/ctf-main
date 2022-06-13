@@ -8,6 +8,7 @@ use DateTimeZone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -61,18 +62,21 @@ class timecontroller extends Controller
         return redirect()->route('questions');
     }
 
-    public function game_over_user()
-    {
-        $time = game_timer::latest()->first();
-        $time->status='end';
-        $time->save();
-        return redirect()->route('users');
-    }
+ 
     public function game_over_admin()
     {
         $time = game_timer::latest()->first();
         $time->status = 'end';
         $time->save();
-        return redirect()->route('questions');
+        if (Auth::user()->status=='admin')
+        {
+            return redirect()->route('questions');
+        }
+        else
+        {
+            return redirect()->route('users');
+        }
+        
+        
     }
 }
