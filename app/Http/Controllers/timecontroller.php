@@ -51,6 +51,7 @@ class timecontroller extends Controller
         $teams = command::all();
         foreach ($teams as $user) {
             $user->scores = 0;
+            $user->answered='"0"';
             $user->save();
         }
         return redirect()->route('questions');
