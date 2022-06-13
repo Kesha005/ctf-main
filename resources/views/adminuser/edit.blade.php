@@ -7,7 +7,7 @@
                 <center><h2>Üýtget</h2></center>
             </div>
             <div class="pull-right">  
-            <center> <a class="btn btn-primary" href="{{ route('admin.index') }}"> Yza</a></center>
+            <center> <a class="btn btn-primary" href="{{ route('teams') }}"> Yza</a></center>
             </div>
         </div>
     </div>

@@ -10,37 +10,37 @@ class quizcontroller extends Controller
 {
     public function index()
     {
-        $categories = category::where('type', 'sowallar')->get();
-        return view('adminsorag.quiz', compact('categories'));
+        $categories=category::where('type','sowallar')->get();
+        return view('adminsorag.quiz',compact('categories'));
     }
 
     public function store(Request $request)
-    {
+    {   
         $request->validate([
-            'ady' => 'required',
-            'sorag' => 'required',
-            'jogap' => 'required',
-            'maglumat' => 'required',
-            'category' => 'required',
-            'file' => 'required',
-            'bal' => 'required|numeric',
-
+        'ady'=>'required',
+        'sorag'=>'required',
+        'jogap'=>'required',
+        'maglumat'=>'required',
+        'category'=>'required',
+        'file'=>'required',
+        'bal'=>'required|numeric',
+        
         ]);
 
-        $file = $request->file('file');
-        $file_name = $file->getClientOriginalName();
-        $file->move(public_path('files'), $file_name);
+        $file=$request->file('file');
+        $file_name=$file->getClientOriginalName();
+        $file->move(public_path('files'),$file_name);
 
-        $quiz = new quiz();
-        $quiz->ady = request('ady');
-        $quiz->sorag = request('sorag');
-        $quiz->jogap = request('jogap');
-        $quiz->maglumat = request('maglumat');
-        $quiz->category = request('category');
-        $quiz->file_path = $file_name;
-        $quiz->bal = request('bal');
+        $quiz=new quiz();
+        $quiz->ady=request('ady');
+        $quiz->sorag=request('sorag');
+        $quiz->jogap=request('jogap');
+        $quiz->maglumat=request('maglumat');
+        $quiz->category=request('category');
+        $quiz->file_path=$file_name;
+        $quiz->bal=request('bal');
         $quiz->save();
-        return redirect()->route('questions')->with('success', 'Sorag goşuldy');
+        return redirect()->route('questions')->with('success','Sorag goşuldy');
     }
 
     public function quizconfig($id)
@@ -49,7 +49,7 @@ class quizcontroller extends Controller
         $id = $id;
         return view('adminsorag.quizcrud', compact('category', 'id'));
     }
-
+    
     public function edit_quiz($id)
     {
         $user = quiz::with('quiz')->find($id);
@@ -77,7 +77,7 @@ class quizcontroller extends Controller
     {
         $user = quiz::find($id);
         $user->delete();
-        return back();
+        return back();  
     }
 
     public function destroy_cat_quiz($id)

@@ -40,7 +40,7 @@
                         <i class="fas fa-user text-white"></i>
                     </div>
                     <div class="info">
-                        <a href="{{route('admin.index')}}" class="d-block text-uppercase">ADMIN PANEL</a>
+                        <a href="{{route('teams')}}" class="d-block text-uppercase">ADMIN PANEL</a>
                     </div>
                 </div>
 
@@ -76,9 +76,7 @@
                             <h2>Üýtget</h2>
                         </center>
                     </div>
-                    <div class="pull-right">
-                        <center> <a class="btn btn-primary" href="{{route('sorag_configuration',$user->category) }}"> Yza</a></center>
-                    </div>
+                  
                 </div>
             </div>
 
@@ -101,7 +99,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Ady:</strong>
-                            <input type="text" name="sorag" value="{{ $user->ady }}" class="form-control" placeholder="Ady">
+                            <input type="text" name="ady" value="{{ $user->ady }}" class="form-control" placeholder="Ady">
                         </div>
                         <div class="form-group">
                             <strong>Sorag:</strong>
@@ -117,7 +115,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Maglumat</strong>
-                            <input type="text" name="barlag2" value="{{ $user->maglumat }}" class="form-control" placeholder="Maglumat">
+                            <input type="text" name="maglumat" value="{{ $user->maglumat }}" class="form-control" placeholder="Maglumat">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -131,7 +129,7 @@
                         {{$user->quiz->category}}
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary" value="{{$user->quiz->category}}">Dowam et</button>
+                        <button type="submit" class="btn btn-primary">Dowam et</button>
                     </div>
                 </div>
 

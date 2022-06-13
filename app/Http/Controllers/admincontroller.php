@@ -84,7 +84,7 @@ class admincontroller extends Controller
     
         $user->update($request->all());
     
-        return redirect()->route('yeams')
+        return redirect()->route('teams')
                         ->with('success','Ulanyjy uytgedildi');
         }
        
@@ -106,7 +106,7 @@ class admincontroller extends Controller
 
         $U = command::latest('scores')->take(15);
         $users = $U->pluck('name')->toArray();
-        $scores = $U->pluck('score')->toArray();
+        $scores = $U->pluck('scores')->toArray();
         return view('adminuser.result', compact('users', 'scores'));
     }
 }

@@ -96,13 +96,14 @@
                     <th>No</th>
                     <th>Ady</th>
                     <th>Bal</th>
-                    <th width="300px">Funksiya</th>
+                    <th>Reg/edildi</th>
+                    <th width="300">Funksiya</th>
                 </tr>
                 @foreach($users as $user)
                 <tr>
                     <td>{{++$i}}</td>
                     <td>{{$user->name}}</td>
-                    <td>{{$user->scores}}</td>
+                    <td>{{$user->score}}</td>
                     <td>{{$user->created_at}}</td>
                     <td>
                         <form action="{{route('admin.destroy',[$user])}}" method="post">
