@@ -47,6 +47,9 @@
             data: {
                 labels: xValues,
                 datasets: [{
+
+
+
                     backgroundColor: barColors,
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -69,9 +72,11 @@
                 },
                 scales: {
                     xAxes: [{
+                        barPercentage: 0.09,
                         ticks: {
+
                             min: 0,
-                            max: 150
+                            max: 700
                         }
                     }]
                 }

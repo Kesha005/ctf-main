@@ -45,12 +45,12 @@ Route::group(['middleware'=>['time']],function(){
 
    Route::post('/quiz_control', [HomeController::class, 'quiz_control'])->name('quiz-control');
 
-   Route::get('/profile', [HomeController::class, 'user_profile'])->name('user.profile');
+   
 
    Route::get('/download/{file}', [HomeController::class, 'download'])->name('download');
 });
 
-
+Route::get('/profile', [HomeController::class, 'user_profile'])->name('user.profile');
 
 Route::get('/raiting', [HomeController::class, 'raiting'])->name('raiting');
 

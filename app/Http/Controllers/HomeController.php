@@ -66,11 +66,8 @@ class HomeController extends Controller
     public function quizes($id)
     {
         $question_ids = Auth::user()->answered;
-        $tt = Auth::user()->command;
-        $team_user = command::where('id', $tt)->get(); #####users team
-
-        $ans_team = $team_user[0]->answered; ###team answers
-        $array_team_answer = str_split($ans_team); #matrix team answer
+        $team_user = command::where('id', Auth::user()->command)->get(); #####users team
+        $array_team_answer = str_split($team_user[0]->answered); #matrix team answer
         $array_answer = str_split($question_ids);
         $category = quiz::where('category', $id)->get();
         $id = $id;
@@ -94,8 +91,7 @@ class HomeController extends Controller
         $jogap = $question->jogap; //sorgyn jogaby            
         $bal = $question->bal; //sorgyn baly
         $qid = strval($question->id); //soragyn idis
-        $usid = Auth::user()->id; //ulanyly belgisi
-        $user = User::find($usid); //ulanyjy doly maglumatlar bilen
+        $user = User::find(Auth::user()->id); //ulanyjy doly maglumatlar bilen
         $usscore = $user->score; //ulanyjynyn onki baly
         $team = command::find($user->command); #####users team
         $ans_team = json_decode($team->answered); ###team answers
@@ -177,9 +173,7 @@ class HomeController extends Controller
         $jogap = $question->jogap; //sorgyn jogaby            
         $bal = $question->bal; //sorgyn baly
         $qid = strval($question->id); //soragyn idis
-
-        $usid = Auth::user()->id; //ulanyly belgisi
-        $user = User::find($usid); //ulanyjy doly maglumatlar bilen
+        $user = User::find(Auth::user()->id); //ulanyjy doly maglumatlar bilen
         $usscore = $user->score; //ulanyjynyn onki baly
         $team_user = command::where('id', Auth::user()->command)->get(); #####users team
         $ans_team = $team_user[0]->answered; ###team answers

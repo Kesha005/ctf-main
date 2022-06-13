@@ -139,7 +139,7 @@
                     xAxes: [{
                         ticks: {
                             min: 0,
-                            max: 150
+                            max: 500
                         }
                     }]
                 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\command;
 use App\Models\game_timer;
 use DateTime;
 use DateTimeZone;
@@ -45,9 +46,20 @@ class timecontroller extends Controller
         return redirect()->route('questions');
     }
 
+    public function ret()
+    {
+        $teams = command::all();
+        foreach ($teams as $user) {
+            $user->scores = 0;
+            $user->save();
+        }
+        return redirect()->route('questions');
+    }
+
     public function new_game()
     {
         $users=User::all();
+       
         $time=game_timer::latest()->first();
         foreach($users as $user)
         {
@@ -59,7 +71,7 @@ class timecontroller extends Controller
         $time->status='retry';
         $time->added_time=date('Y-m-d H:i:s');
         $time->save();
-        return redirect()->route('questions');
+        return $this->ret();
     }
 
  
