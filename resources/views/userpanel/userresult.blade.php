@@ -15,11 +15,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto ml-auto">
-                    @if($user->status=='admin')
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="{{route('teams')}}">Admin</a>
-                    </li>
-                    @endif
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{route('home')}}">Ýaryş</a>
                     </li>
