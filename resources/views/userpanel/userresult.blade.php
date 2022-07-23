@@ -4,10 +4,11 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome.solid.min.css')}}">
-<script src="{{asset('js/chart.min.js')}}"></script>
+<script src="{{asset('../js/chart.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 <body class="img js-fullheight" style="background-image: url('../img/bg.jpg');">
+
     <nav class="navbar navbar-expand-sm fixed-top  ">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -34,7 +35,7 @@
         </div>
     </nav><br><br><br>
     <div class="col-lg-12 bg-dark">
-        <canvas id="myChart" height="100"></canvas>
+        <canvas id="myChart" height="90"></canvas>
     </div>
 
     <script type="text/javascript">
@@ -80,7 +81,7 @@
             },
             options: {
                 legend: {
-                    display: false
+                    display:false
                 },
                 title: {
                     display: true,
@@ -88,7 +89,7 @@
                 },
                 scales: {
                     xAxes: [{
-                        barPercentage: 0.09,
+                        barPercentage: 0.18,
                         ticks: {
 
                             min: 0,

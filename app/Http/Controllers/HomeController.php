@@ -134,10 +134,8 @@ class HomeController extends Controller
     public function raiting()
     {
         $U = command::latest('scores')->take(15);
-        $usid = Auth::user()->id; //ulanyly belgisi
-        $user = User::find($usid); //ulanyjy doly maglumatlar bilen
         $users = $U->pluck('name')->toArray();
         $scores = $U->pluck('scores')->toArray();
-        return view('userpanel.userresult', compact('users', 'scores','user'));
+        return view('userpanel.userresult', compact('users', 'scores'));
     }
 }

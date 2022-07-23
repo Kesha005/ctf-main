@@ -79,7 +79,6 @@ Route::group(['middleware'=>['admin']],function()
 
    Route::get('/admin/create_user{id}',[admincontroller::class,'create'])->name('admin.create');
 
-   Route::get('/admin/show_user/{user}',[admincontroller::class,'show'])->name('admin.show');
 
    Route::get('/admin/edit_user/{user}',[admincontroller::class,'edit'])->name('admin.edit');
 

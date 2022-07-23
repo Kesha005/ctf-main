@@ -38,10 +38,10 @@
 		      	    <form action="{{ route('login') }}" class="signin-form" method="post">
 						@csrf
 		      		<div class="form-group">
-		      			<input name="email" type="text" class="form-control" placeholder="Username" required>
+		      			<input name="email" type="text" class="form-control" placeholder="Ulanyjy ady" required>
 		      		</div>
 	            <div class="form-group">
-	              <input id="password-field" name="password" type="password" class="form-control" placeholder="Password" required>
+	              <input id="password-field" name="password" type="password" class="form-control" placeholder="Parol" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password bg-info"></span>
 	            </div>
 	            <div class="form-group">

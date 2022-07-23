@@ -81,6 +81,9 @@
                             <a class="btn btn-success" href="{{route('admin.create',$ids->id)}}">Täze agza goş</a>
                         </div>
                     </center>
+                    <div class="pull-right">
+                         <a class="btn btn-primary" href="{{ route('teams') }}"> Yza</a>
+                    </div>
                 </div>
             </div>
 
@@ -95,6 +98,7 @@
                 <tr>
                     <th>No</th>
                     <th>Ady</th>
+                    <th>Ulanyjy ady</th>
                     <th>Bal</th>
                     <th>Reg/edildi</th>
                     <th width="300">Funksiya</th>
@@ -103,11 +107,11 @@
                 <tr>
                     <td>{{++$i}}</td>
                     <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
                     <td>{{$user->score}}</td>
                     <td>{{$user->created_at}}</td>
                     <td>
                         <form action="{{route('admin.destroy',[$user])}}" method="post">
-                            <a class="btn btn-info" href="{{ route('admin.show',[ $user->id]) }}">Maglumat</a>
                             <a class="btn btn-info" href="{{ route('admin.edit',[ $user->id]) }}">Üýtget</a>
                             @csrf
                             @method('DELETE')

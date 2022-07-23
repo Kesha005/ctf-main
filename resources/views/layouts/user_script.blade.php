@@ -1,21 +1,3 @@
-<br>
-    <div class="text-right">
-        <div id="year" class="year"></div>
-        <div id="countdown" class="countdown">
-            <div class=" col-lg-11 text-right">
-                <h2 id="days" hidden>00</h2>
-                <h4 class="fas" id="hours">00:</h4>
-                <small class="fas">sagat</small>
-                <h4 id="minutes" class="fas">00:</h4>
-                <small class="fas">minut</small>
-                <h4 class="fas" id="seconds">00</h4>
-                <small class="fas">sekunt</small><br>
-                <a href="{{ route('game_over_admin') }}" id="h" name="h" hidden></a>
-            </div>
-               
-        </div>
-    </div>
-
 
 <a href="{{ route('game_over_admin') }}" id="h" name="h" hidden></a>
  <script type="text/javascript">

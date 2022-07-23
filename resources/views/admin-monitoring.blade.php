@@ -24,9 +24,8 @@
     <tr>
         <th>No</th>
         <th>Ady</th>
-        <th>Email</th>
+        <th>Ulanyjy ady</th>
         <th>Ýagdaýy</th>
-        <th width="300px">Funksiya</th>
     </tr>
     @foreach($users as $user)
     <tr>
@@ -34,9 +33,6 @@
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
         <td>{{$user->condition}}</td>
-        <td>
-            <a class="btn btn-info" href="{{ route('admin.show',[$user]) }}">Maglumat</a>
-        </td>
     </tr>
     @endforeach
 </table>

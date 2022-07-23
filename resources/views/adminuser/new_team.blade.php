@@ -7,8 +7,8 @@
                 <h2>Täze topar goş</h2>
             </center>
         </div>
-        <div class="pull-right">
-            <center> <a class="btn btn-primary" href="{{ route('teams') }}"> Yza</a></center>
+        <div class="pull-left">        
+         <a class="btn btn-primary" href="{{ route('teams') }}"> Yza</a>
         </div>
     </div>
 </div>
@@ -26,18 +26,16 @@
 
 <form action="{{ route('save_team') }}" method="post">
     @csrf
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+    <div class="continer">
+        <div class="row justify-content-center">
             <div class="form-group text-center">
                 <strong>Ady:</strong>
                 <input type="text" name="name" class="form-control text-center" placeholder="Ady">
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Goş</button>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Goş</button>
+            </div>
         </div>
     </div>
-
 </form>
 @endsection

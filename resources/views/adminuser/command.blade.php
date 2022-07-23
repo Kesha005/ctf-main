@@ -93,23 +93,23 @@
             <br>
             <table class="table table-bordered">
                 <tr>
-                    <th>No</th>
-                    <th>Ady</th>
-                    <th>Bal</th>
-                    <th width="300px">Funksiya</th>
+                    <th width="100px">No</th>
+                    <th width="200px">Toparyň ady</th>
+                    <th width="50px">Umumy bal</th>
+                    <th width="100px">Funksiya</th>
                 </tr>
                 @foreach($commands as $command)
-                <tr>
-                    <td>{{++$i}}</td>
+                <tr >
+                    <td >{{++$i}}</td>
                     <td>{{$command->name}}</td>
                     <td>{{$command->scores}}</td>
                     <td>
-                        <form action="{{route('del_team',[$command])}}" method="post">
-                            <a class="btn btn-info" href="{{ route('info_team', $command->id) }}">Maglumat/Üýtget</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Aýyr</button>
-                        </form>
+                        <form action=" {{route('del_team',[$command])}}" method="post">
+                    <a class="btn btn-info" href="{{ route('info_team', $command->id) }}">Maglumat/Üýtget</a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Aýyr</button>
+                    </form>
                     </td>
                 </tr>
                 @endforeach

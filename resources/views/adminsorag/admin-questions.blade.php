@@ -149,9 +149,9 @@
                             @endforeach
                         </div>
                     </div>
-                </section><b
+                </section>
             @elseif($date->status=='on_progress')
-                <br>
+                <br><br><br>
                 <div id="year" class="year"></div>
                 <div id="countdown" class="countdown">
                         <div class="text-center">

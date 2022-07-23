@@ -77,9 +77,9 @@
                     <div class="pull-right">
                         <a class="btn btn-primary" href="{{ route('monitoring') }}"> Yza</a>
                     </div>
-                </div><br>
-                <div class="col-lg-12 bg-light">
-                    <canvas id="myChart" height="140"></canvas>
+                </div><br><br>
+                <div class="col-lg-12 bg-dark">
+                    <canvas id="myChart" height="100"></canvas>
                 </div>
             </div>
 

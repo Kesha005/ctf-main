@@ -1,7 +1,8 @@
 @extends('userpanel.index')
 @section('content')
 <br><br>
-<div class="container my-7">
+
+<div class="container my-5">
     <div class="row">
     @foreach($categories1 as $category1)
         <div class="col-lg-2">
@@ -9,11 +10,12 @@
         </div>
     @endforeach
     </div>
-     <hr style="height:2px; width:100%; border-width:0; color:darkslategray; background-color:darkslategray"><br>
+    <hr style="height:2px; width:100%; border-width:0; color:darkslategray; background-color:darkslategray"><br>
+    @yield('blocks')
 </div>
 
 
-@yield('blocks')
+
 
 
 @endsection
